@@ -1,8 +1,7 @@
 package com.mateuslopes.seguradora.domain;
 
-import com.mateuslopes.seguradora.domain.Car;
-import com.mateuslopes.seguradora.domain.Driver;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
