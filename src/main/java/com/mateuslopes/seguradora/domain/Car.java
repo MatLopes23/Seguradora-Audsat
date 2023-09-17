@@ -1,11 +1,16 @@
 package com.mateuslopes.seguradora.domain;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @EqualsAndHashCode
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "car")
 public class Car {
@@ -27,4 +32,6 @@ public class Car {
     @Column(name = "fipe_value", nullable = false)
     private Double fipe;
 
+    @OneToMany(mappedBy = "car", fetch = FetchType.EAGER)
+    private Set<Claim> claims = new HashSet<>();
 }

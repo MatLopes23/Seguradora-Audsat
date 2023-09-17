@@ -1,11 +1,15 @@
 package com.mateuslopes.seguradora.domain;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Data
 @EqualsAndHashCode
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "car_driver")
 public class CarDriver {
@@ -25,4 +29,5 @@ public class CarDriver {
     @ManyToOne
     @JoinColumn(name = "car_id")
     private Car car;
+
 }

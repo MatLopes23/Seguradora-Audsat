@@ -2,8 +2,8 @@ package com.mateuslopes.seguradora.controller;
 
 import com.mateuslopes.seguradora.domain.Insurance;
 import com.mateuslopes.seguradora.service.InsuranceService;
+import com.mateuslopes.seguradora.service.dto.BudgetDto;
 import com.mateuslopes.seguradora.service.dto.InsuranceDto;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,13 +26,13 @@ public class InsuranceController {
     }
 
     @GetMapping("/budget/{insuranceId}")
-    public ResponseEntity<Insurance> getById(
+    public ResponseEntity<BudgetDto> getBudgetByInsuranceId(
             @PathVariable("insuranceId") final Long idInsurance
     ) {
-        final Insurance insurance = insuranceService.getById(idInsurance);
+        final BudgetDto budget = insuranceService.calculateBudgetByInsurance(idInsurance);
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(insurance);
+                .body(budget);
     }
 
     @PutMapping("/budget/{insuranceId}")

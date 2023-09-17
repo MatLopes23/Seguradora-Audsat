@@ -1,13 +1,17 @@
 package com.mateuslopes.seguradora.domain;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @EqualsAndHashCode
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "driver")
 public class Driver {
@@ -22,5 +26,8 @@ public class Driver {
 
     @Column(name = "birthdate", nullable = false)
     private LocalDate birthdate;
+
+    @OneToMany(mappedBy = "driver", fetch = FetchType.EAGER)
+    private Set<Claim> claims = new HashSet<>();
 
 }

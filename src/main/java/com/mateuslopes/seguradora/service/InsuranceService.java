@@ -1,6 +1,7 @@
 package com.mateuslopes.seguradora.service;
 
 import com.mateuslopes.seguradora.domain.Insurance;
+import com.mateuslopes.seguradora.service.dto.BudgetDto;
 import com.mateuslopes.seguradora.service.dto.InsuranceDto;
 
 public interface InsuranceService {
@@ -8,7 +9,9 @@ public interface InsuranceService {
 
     Insurance getById(Long insuranceId);
 
-    Insurance updateById(Long insuranceId, InsuranceDto insuranceDomain);
+    BudgetDto calculateBudgetByInsurance(Long insuranceId);
 
-    Boolean deleteById(Long insuranceId);
+    Insurance updateById(Long insuranceId, InsuranceDto insuranceDto);
+
+    void deleteById(Long insuranceId);
 }
