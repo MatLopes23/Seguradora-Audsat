@@ -1,11 +1,13 @@
 package com.mateuslopes.seguradora.domain;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 @Data
 @EqualsAndHashCode
+@NoArgsConstructor
+@Builder
+@AllArgsConstructor
 @Entity
 @Table(name = "customer")
 public class Customer {
