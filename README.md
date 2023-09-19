@@ -1,4 +1,4 @@
-# Projeto SEGURADORA - Audsat
+# Projeto SEGURADORA
 
 ### Documentação
 
